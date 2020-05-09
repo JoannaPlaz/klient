@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Klient form</title>
+</head>
+<body>
+<h1>Klient form</h1>
+<div th:replace="fragments :: navigator"></div>
+<form th:action="@{/klient/add}" th:method="post" th:object="${newKlient}">
+    Imie: <input th:field="*{imie}"/>
+    <br/>
+    Nazwisko: <input th:field="*{nazwisko}"/>
+    <br/>
+    Ilosc aut: <input type="number" th:field="*{iloscSamochodow}"/>
+    <br/>
+    Czy daje napiwki <input type="checkbox" th:field="*{czyDajeNapiwki}"/>
+    <br/>
+    Ocena klienta: <input type="number" min="0" max="10" th:field="*{ocenaKlienta}"/>
+    <br/>
+    <input type="submit">
+</form>
+</body>
+</html>

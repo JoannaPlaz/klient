@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Klient List</title>
+    <style>
+        td {
+            border: 1px solid #000;
+        }
+        table {
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+<h1>Klient List</h1>
+<div th:replace="fragments :: navigator"></div>
+<table>
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Imie</th>
+        <th>Nazwisko</th>
+        <th>Liczba aut</th>
+        <th>Czy daje napiwki</th>
+        <th>Ocena Klienta</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="klient : ${ListaKlientow}">
+        <td th:text="${klient.id}"></td>
+        <td th:text="${klient.imie}"></td>
+        <td th:text="${klient.nazwisko}"></td>
+        <td th:text="${klient.iloscSamochodow}"></td>
+        <td th:text="${klient.czyDajeNapiwki}"></td>
+        <td th:text="${klient.ocenaKlienta}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
